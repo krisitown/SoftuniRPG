@@ -14,7 +14,8 @@ namespace Softuni_RPG
     public partial class MainWindow : Form
     {
         private Image playerImage = Image.FromFile(@"..\..\Resources\code_wizard.png");
-        private Map map = new Map(@"..\..\Map_and_World\map1.txt");
+        private World world = new World(@"..\..\Map_and_World\Maps\");
+        private Map map;
         private int playerX = 9;
         private int playerY = 8;
         private bool inBattle = false;
@@ -26,7 +27,7 @@ namespace Softuni_RPG
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            map = world.CurrentMap();
         }
 
         protected override void OnPaint(PaintEventArgs e)
