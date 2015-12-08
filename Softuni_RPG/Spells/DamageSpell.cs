@@ -10,7 +10,7 @@ namespace Softuni_RPG.Spells
     {
         public override void Use(Map_and_World.Entity target)
         {
-            target.HP -= this.Power;
+            target.HP -= this.Power; //??think of a formula to include the target's defense too
         }
     }
 }

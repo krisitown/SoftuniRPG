@@ -9,6 +9,7 @@ namespace Softuni_RPG.Map_and_World
     {
         private string name;
         private double hp;
+        private double defense;
 
         abstract public string Collision();
 
@@ -19,7 +20,7 @@ namespace Softuni_RPG.Map_and_World
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentNullException("The name cannot be empty.")
+                    throw new ArgumentNullException("The name cannot be empty.");
                 }
                 this.name = value;
             }
@@ -32,6 +33,16 @@ namespace Softuni_RPG.Map_and_World
             {
                 //TODO: CHECK
                 this.hp = value;
+            }
+        }
+
+        public double Defense
+        {
+            get { return this.defense; }
+            set
+            {
+                //TODO: CHECK
+                this.defense = value;
             }
         }
     }
