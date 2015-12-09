@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="Map_and_World\Cell.cs" />
     <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Map_and_World\Constants.cs" />
     <Compile Include="Map_and_World\Map.cs" />
     <Compile Include="Map_and_World\World.cs" />
     <Compile Include="Program.cs" />

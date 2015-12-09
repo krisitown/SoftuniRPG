@@ -8,9 +8,11 @@ namespace Softuni_RPG.Map_and_World
     public abstract class Entity
     {
         private string name;
+        private int x;
+        private int y;
         private double hp;
         private double defense;
-        private readonly double maxHealth; 
+        private double maxHealth = Constants.maxPlayerHealth; 
 
         abstract public string Collision();
 
@@ -27,7 +29,10 @@ namespace Softuni_RPG.Map_and_World
             }
         }
 
-        public double MaxHealth { get; protected set; }
+        public double MaxHealth {
+            get { return this.maxHealth; }
+            protected set { this.maxHealth = value; }
+        }
 
         public double HP
         {
@@ -46,6 +51,32 @@ namespace Softuni_RPG.Map_and_World
             {
                 //TODO: CHECK
                 this.defense = value;
+            }
+        }
+
+        public int X
+        {
+            get
+            {
+                return this.x;
+            }
+            set
+            {
+                //TODO: CHECK
+                this.x = value;
+            }
+        }
+
+        public int Y
+        {
+            get
+            {
+                return this.y;
+            }
+            set
+            {
+                //TODO: CHECK
+                this.y = value;
             }
         }
     }

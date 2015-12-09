@@ -18,13 +18,14 @@ namespace Softuni_RPG
         private Image playerImage = Image.FromFile(@"..\..\Resources\code_wizard.png");
         private World world = new World(@"..\..\Map_and_World\Maps\");
         private Map map;
-        private int playerX = 9;
-        private int playerY = 8;
+        
         private bool inBattle = false;
 
         public MainWindow()
         {
             InitializeComponent();
+            player.X = 9;
+            player.Y = 8;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -45,7 +46,7 @@ namespace Softuni_RPG
                 }
             }
 
-            graphics.DrawImage(playerImage, new Point(playerX * 64, playerY * 64 - 20));
+            graphics.DrawImage(playerImage, new Point(player.X * 64, player.Y * 64 - 20));
 
             if (inBattle)
             {
@@ -61,12 +62,12 @@ namespace Softuni_RPG
             {
                     //TODO: Check what is there on the cell
                 case 'w':
-                    if (playerY != 0)
+                    if (player.Y != 0)
                     {
-                        if (this.map.Cells[playerY - 1, playerX].IsPassable)
+                        if (this.map.Cells[player.Y - 1, player.X].IsPassable)
                         {
-                            playerY--;
-                            if (this.map.Cells[playerY, playerX].IsOccupied)
+                            player.Y--;
+                            if (this.map.Cells[player.Y, player.X].IsOccupied)
                             {
                                 HandleCollision();
                             }
@@ -74,14 +75,14 @@ namespace Softuni_RPG
                     }
                     break;
                 case 's':
-                    if (playerY != 9)
+                    if (player.Y != 9)
                     {
-                        if (playerY != 0)
+                        if (player.Y != 0)
                         {
-                            if (this.map.Cells[playerY + 1, playerX].IsPassable)
+                            if (this.map.Cells[player.Y + 1, player.X].IsPassable)
                             {
-                                playerY++;
-                                if (this.map.Cells[playerY, playerX].IsOccupied)
+                                player.Y++;
+                                if (this.map.Cells[player.Y, player.X].IsOccupied)
                                 {
                                     HandleCollision();
                                 }
@@ -90,12 +91,12 @@ namespace Softuni_RPG
                     }
                     break;
                 case 'a':
-                    if (playerX != 0)
+                    if (player.X != 0)
                     {
-                        if (this.map.Cells[playerY, playerX - 1].IsPassable)
+                        if (this.map.Cells[player.Y, player.X - 1].IsPassable)
                         {
-                            playerX--;
-                            if (this.map.Cells[playerY, playerX].IsOccupied)
+                            player.X--;
+                            if (this.map.Cells[player.Y, player.X].IsOccupied)
                             {
                                 HandleCollision();
                             }
@@ -103,12 +104,12 @@ namespace Softuni_RPG
                     }
                     break;
                 case 'd':
-                    if (playerX != 9)
+                    if (player.X != 9)
                     {
-                        if (this.map.Cells[playerY, playerX + 1].IsPassable)
+                        if (this.map.Cells[player.Y, player.X + 1].IsPassable)
                         {
-                            playerX++;
-                            if (this.map.Cells[playerY, playerX].IsOccupied)
+                            player.X++;
+                            if (this.map.Cells[player.Y, player.X].IsOccupied)
                             {
                                 HandleCollision();
                             }
@@ -121,7 +122,7 @@ namespace Softuni_RPG
 
         private void HandleCollision()
         {
-            switch (this.map.Cells[playerY, playerX].Occupator.Collision())
+            switch (this.map.Cells[player.Y, player.X].Occupator.Collision())
             {
                 case "battle":
                     this.inBattle = true;
