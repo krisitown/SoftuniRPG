@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Enemy.cs" />
+    <Compile Include="Entities\Player.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>

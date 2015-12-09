@@ -37,7 +37,11 @@ namespace Softuni_RPG.Entities
             {
                 throw new ArgumentNullException();
             }
-            this.items.Remove(item);
+            if (this.items.Contains(item))
+            {
+                this.items.Remove(item);
+            }
+            
         }
 
         public void AddSpell(Spell spell)
@@ -55,7 +59,17 @@ namespace Softuni_RPG.Entities
             {
                 throw new ArgumentNullException();
             }
-            this.spells.Remove(spell);
+
+            if (this.spells.Contains(spell))
+            {
+                this.spells.Remove(spell);
+            }
+            
+        }
+
+        public override string Collision()
+        {
+            throw new NotImplementedException();
         }
     }
 }
