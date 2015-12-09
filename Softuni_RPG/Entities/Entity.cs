@@ -10,6 +10,7 @@ namespace Softuni_RPG.Map_and_World
         private string name;
         private double hp;
         private double defense;
+        private readonly double maxHealth; 
 
         abstract public string Collision();
 
@@ -25,6 +26,8 @@ namespace Softuni_RPG.Map_and_World
                 this.name = value;
             }
         }
+
+        public double MaxHealth { get; protected set; }
 
         public double HP
         {

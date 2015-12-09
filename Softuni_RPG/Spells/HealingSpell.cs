@@ -15,7 +15,15 @@ namespace Softuni_RPG.Spells
 
         public override void Use(Map_and_World.Entity target)
         {
-            target.HP += this.Power;
+
+            double healedHealth = target.HP + this.Power;
+
+            if (healedHealth > target.MaxHealth)
+            {
+                healedHealth = target.MaxHealth;
+            }
+
+            target.HP = healedHealth;
         }
     }
 }

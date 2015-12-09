@@ -9,9 +9,12 @@ namespace Softuni_RPG.Entities
 {
     class Enemy : Entity
     {
+        private readonly double maxHealth = 100;
+
         public override string Collision()
         {
             return "battle";
         }
+
     }
 }

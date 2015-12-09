@@ -14,7 +14,7 @@ namespace Softuni_RPG
 {
     public partial class MainWindow : Form
     {
-        private Player player = new Player();
+//        private Player player = new Player();
         private Image playerImage = Image.FromFile(@"..\..\Resources\code_wizard.png");
         private World world = new World(@"..\..\Map_and_World\Maps\");
         private Map map;

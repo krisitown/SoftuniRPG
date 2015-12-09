@@ -7,3 +7,12 @@ C:\Users\User1\Documents\Visual Studio 2013\Projects\Team_Project\Softuni_RPG\So
 C:\Users\User1\Documents\Visual Studio 2013\Projects\Team_Project\Softuni_RPG\Softuni_RPG\obj\Debug\Softuni_RPG.exe
 C:\Users\User1\Documents\Visual Studio 2013\Projects\Team_Project\Softuni_RPG\Softuni_RPG\obj\Debug\Softuni_RPG.pdb
 C:\Users\User1\Documents\Visual Studio 2013\Projects\Team_Project\Softuni_RPG\Softuni_RPG\obj\Debug\Softuni_RPG.MainWindow.resources
+C:\Users\Pipi\Documents\GitHub\SoftuniRPG\Softuni_RPG\bin\Debug\Softuni_RPG.exe.config
+C:\Users\Pipi\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.exe
+C:\Users\Pipi\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.pdb
+C:\Users\Pipi\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.csprojResolveAssemblyReference.cache
+C:\Users\Pipi\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.MainWindow.resources
+C:\Users\Pipi\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.Properties.Resources.resources
+C:\Users\Pipi\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.csproj.GenerateResource.Cache
+C:\Users\Pipi\Documents\GitHub\SoftuniRPG\Softuni_RPG\bin\Debug\Softuni_RPG.exe
+C:\Users\Pipi\Documents\GitHub\SoftuniRPG\Softuni_RPG\bin\Debug\Softuni_RPG.pdb

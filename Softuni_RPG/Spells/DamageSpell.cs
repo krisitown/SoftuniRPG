@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Softuni_RPG.Map_and_World;
 
 namespace Softuni_RPG.Spells
 {
@@ -13,9 +10,19 @@ namespace Softuni_RPG.Spells
         {
         }
 
-        public override void Use(Map_and_World.Entity target)
+        public override void Use(Entity target)
         {
-            target.HP -= this.Power; //??think of a formula to include the target's defense too
+
+            double producedDamage = this.Power - target.Defense;
+
+            if (producedDamage < 0)
+            {
+                producedDamage = 0;
+            }
+
+            target.HP -= producedDamage; 
+
+
         }
     }
 }
