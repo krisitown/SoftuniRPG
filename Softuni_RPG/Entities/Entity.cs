@@ -11,6 +11,7 @@ namespace Softuni_RPG.Map_and_World
         private int x;
         private int y;
         private double hp;
+        private double damage;
         private double defense;
         private double maxHealth = Constants.maxPlayerHealth; 
 
@@ -51,6 +52,16 @@ namespace Softuni_RPG.Map_and_World
             {
                 //TODO: CHECK
                 this.defense = value;
+            }
+        }
+
+        public double Damage
+        {
+            get { return this.damage; }
+            set
+            {
+                //TODO: CHECK
+                this.damage = value;
             }
         }
 

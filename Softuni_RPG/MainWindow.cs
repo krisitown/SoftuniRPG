@@ -127,7 +127,7 @@ namespace Softuni_RPG
                 case "battle":
                     this.inBattle = true;
                     break;
-                case "itme":
+                case "item":
                     //TODO:
                     break;
             }
