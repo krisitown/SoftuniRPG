@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Softuni_RPG.Entities;
 
 namespace Softuni_RPG.Spells
 {
@@ -13,7 +14,7 @@ namespace Softuni_RPG.Spells
         {
         }
 
-        public override void Use(Map_and_World.Entity target)
+        public override void Use(Entity target)
         {
 
             double healedHealth = target.HP + this.Power;

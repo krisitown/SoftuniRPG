@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Softuni_RPG.Map_and_World;
 
-namespace Softuni_RPG.Map_and_World
+namespace Softuni_RPG.Entities
 {
     public abstract class Entity
     {
@@ -18,7 +16,7 @@ namespace Softuni_RPG.Map_and_World
 
         public string Name
         {
-            get { return this.Name; }
+            get { return this.name; }
             set
             {
                 if (string.IsNullOrEmpty(value))
@@ -36,7 +34,7 @@ namespace Softuni_RPG.Map_and_World
 
         public double HP
         {
-            get { return this.HP; }
+            get { return this.hp; }
             set
             {
                 //TODO: CHECK

@@ -1,4 +1,5 @@
 ﻿using System;
+using Softuni_RPG.Entities;
 using Softuni_RPG.Map_and_World;
 
 namespace Softuni_RPG.Spells
