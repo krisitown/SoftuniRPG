@@ -8,6 +8,9 @@ namespace Softuni_RPG.Items.Models
 {
     public class Cuirass:EquipableItem
     {
-        private  const double defaultPower=0;
+        private const double defaultPower=0;
+        private const double defaultDefence = 0;
+
+
     }
 }

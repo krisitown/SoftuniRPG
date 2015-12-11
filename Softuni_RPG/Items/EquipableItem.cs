@@ -3,45 +3,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Softuni_RPG.Items.Interafces;
+using Softuni_RPG.Entities;
+using Softuni_RPG.Items.Interfaces;
+using Softuni_RPG.Items.Interfaces;
 using Softuni_RPG.Map_and_World;
 
 namespace Softuni_RPG.Items
 {
     public abstract class EquipableItem : Item, IEquipableItem
     {
-        private double power;
-        private double defence;
+        private double powerFactor;
+        private double defenceFactor;
 
-        protected EquipableItem(string name,double power,double defence):base(name)
+        protected EquipableItem(string name,double powerFactor,double defenceFacotr):base(name)
         {
-            this.Power = power;
-            this.Defence = defence;
+            this.PowerFactor = powerFactor;
+            this.DefenceFactor = defenceFactor;
         }
-        public double Power
+        public double PowerFactor
         {
-            get { return this.power; }
+            get { return this.powerFactor; }
             protected set
             {
                 //check
-                this.power = value;
+                this.powerFactor = value;
             }
         }
-        public double Defence
-        {
-            get { return this.defence; }
+        public double DefenceFactor
+       {
+            get { return this.defenceFactor; }
             protected set
             {
                 //check
-                this.defence = value;
+                this.defenceFactor = value;
             }
         }
 
         public override void Use(Entity target)
         {
-            target.Defense += this.Defence;
-            target.HP += this.Power;
-
+          
         }
     }
 }

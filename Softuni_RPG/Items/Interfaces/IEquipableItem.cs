@@ -2,7 +2,7 @@
 {
     interface IEquipableItem
     {
-        double Power { get; }
-        double Defence { get; }
+        double PowerFactor { get; }
+        double DefenceFactor { get; }
     }
 }
