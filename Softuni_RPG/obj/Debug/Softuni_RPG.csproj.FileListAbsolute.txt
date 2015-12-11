@@ -16,3 +16,6 @@ C:\Users\Pipi\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.Prop
 C:\Users\Pipi\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.csproj.GenerateResource.Cache
 C:\Users\Pipi\Documents\GitHub\SoftuniRPG\Softuni_RPG\bin\Debug\Softuni_RPG.exe
 C:\Users\Pipi\Documents\GitHub\SoftuniRPG\Softuni_RPG\bin\Debug\Softuni_RPG.pdb
+C:\Users\bacuty\Documents\GitHub\SoftuniRPG\Softuni_RPG\bin\Debug\Softuni_RPG.exe.config
+C:\Users\bacuty\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.exe
+C:\Users\bacuty\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.pdb

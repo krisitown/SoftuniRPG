@@ -1,6 +1,7 @@
 ﻿using Softuni_RPG.Map_and_World;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,10 +11,8 @@ namespace Softuni_RPG.Items
     public abstract class Item
     {
         private string name;
-        private double power;
-        private double defense;
 
-        public Item(string name, double power, double defense) 
+        protected Item(string name) 
         {
             this.Name = name;
         }
@@ -21,7 +20,7 @@ namespace Softuni_RPG.Items
         public string Name
         {
             get { return this.name; }
-            set
+            protected set
             {
                 if (string.IsNullOrEmpty(value))
                 {
@@ -31,25 +30,7 @@ namespace Softuni_RPG.Items
             }
         }
 
-        public double Power
-        {
-            get { return this.power; }
-            set
-            {
-                //check
-                this.power = value;
-            }
-        }
-
-        public double Defense
-        {
-            get { return this.defense; }
-            set
-            {
-                //check
-                this.defense = value;
-            }
-        }
+        
 
         public abstract void Use(Entity target);
     }

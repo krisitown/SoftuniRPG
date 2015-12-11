@@ -46,7 +46,18 @@
   <ItemGroup>
     <Compile Include="Entities\Enemy.cs" />
     <Compile Include="Entities\Player.cs" />
+    <Compile Include="Items\EquipableItem.cs" />
+    <Compile Include="Items\Interfaces\IEquipableItem.cs" />
+    <Compile Include="Items\Interfaces\IUsableItem.cs" />
     <Compile Include="Items\Item.cs" />
+    <Compile Include="Items\Models\Cuirass.cs" />
+    <Compile Include="Items\Models\Helmet.cs" />
+    <Compile Include="Items\Models\LegArmor.cs" />
+    <Compile Include="Items\Models\Mace.cs" />
+    <Compile Include="Items\Models\Mantle.cs" />
+    <Compile Include="Items\Models\Shield.cs" />
+    <Compile Include="Items\Models\Spear.cs" />
+    <Compile Include="Items\UsableItem.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +102,7 @@
   <ItemGroup>
     <Content Include="Resources\woodTile.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
