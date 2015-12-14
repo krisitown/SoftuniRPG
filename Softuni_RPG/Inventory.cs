@@ -21,7 +21,7 @@ namespace Softuni_RPG
 
         //ITEM CONSTANTS
 
-        private const int startX = 10;
+        private const int startX = 100;
         private const int startY = 40;
         private const int interval = 50;
 
@@ -58,7 +58,7 @@ namespace Softuni_RPG
             // Set the MinimizeBox to false to remove the minimize box.
             this.MinimizeBox = false;
             // Set the start position of the form to the center of the screen.
-            this.StartPosition = FormStartPosition.CenterScreen;
+            this.StartPosition = FormStartPosition.CenterScreen;    
 
             this.BackgroundImage = Image.FromFile(inventoryBackgroundDir);
             this.BackgroundImageLayout = ImageLayout.Stretch;
@@ -66,10 +66,10 @@ namespace Softuni_RPG
             var itemContainerSize = new Size(interval, interval);
             for (int i = 0; i < 5; i++)
             {
-                itemContainerPoint.X = startX + (i*interval);
+                itemContainerPoint.X = startX + (i * interval);
                 for (int j = 0; j < 10; j++)
                 {
-                    itemContainerPoint.Y = startY + (j*interval);
+                    itemContainerPoint.Y = startY + (j * interval);
                     var itemContainer = new Rectangle(itemContainerPoint, itemContainerSize);
                     itemPanel.Add(itemContainer);
                 }
@@ -105,7 +105,7 @@ namespace Softuni_RPG
             playerEquipedItemUI = new Label();
             playerEquipedItemUI.Parent = this;
             playerEquipedItemUI.Location = new Point(450, 560);
-            playerEquipedItemUI.Text = String.Format("Item:{0}", player.ItemEquiped!=null?player.ItemEquiped.Name:"None");
+            playerEquipedItemUI.Text = String.Format("Item:{0}", player.ItemEquiped != null ? player.ItemEquiped.Name : "None");
 
 
             base.OnLoad(e);
@@ -139,9 +139,9 @@ namespace Softuni_RPG
 
             base.OnMouseClick(e);
         }
-    
 
-    public void OnmsClick(object sender, EventArgs args)
+
+        public void OnmsClick(object sender, EventArgs args)
         {
             MessageBox.Show("Hello");
         }
@@ -153,20 +153,20 @@ namespace Softuni_RPG
             Pen pen = new Pen(Color.CornflowerBlue);
             foreach (var item in itemPanel)
             {
-                graphics.DrawRectangle(pen,item);
+                graphics.DrawRectangle(pen, item);
             }
             for (int i = 0; i < imgs.Count(); i++)
             {
-                graphics.DrawImage(imgs[i],rects[i]);
+                graphics.DrawImage(imgs[i], rects[i]);
             }
-            
+
 
             base.OnPaint(e);
         }
 
         private void test()
         {
-            
+
         }
     }
 }

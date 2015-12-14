@@ -19,7 +19,7 @@ namespace Softuni_RPG
         private Image playerImage = Image.FromFile(@"..\..\Resources\code_wizard.png");
         private World world = new World(@"..\..\Map_and_World\Maps\");
         private Map map;
-        
+
         private bool inBattle = false;
 
         public MainWindow()
@@ -63,7 +63,7 @@ namespace Softuni_RPG
         {
             switch (e.KeyChar)
             {
-                    //TODO: Check what is there on the cell
+                //TODO: Check what is there on the cell
                 case 'w':
                     if (player.Y != 0)
                     {
@@ -123,6 +123,9 @@ namespace Softuni_RPG
                     var inv = new Inventory(this.player);
                     inv.ShowDialog();
                     break;
+
+
+
             }
             this.Refresh();
         }
@@ -132,9 +135,15 @@ namespace Softuni_RPG
             switch (this.map.Cells[player.Y, player.X].Occupator.Collision())
             {
                 case "battle":
-                    this.inBattle = true;
+                    //this.inBattle = true;
+                    //TODO testing method with enemy
+                    Enemy enem = new Enemy();
+                    enem.Name = "Dragan";
+                    var battle = new Battle(this.player,enem);
+                    battle.ShowDialog();
+
                     break;
-                case "itme":
+                case "item":
                     //TODO:
                     break;
             }
@@ -142,9 +151,9 @@ namespace Softuni_RPG
 
         private void ItemGenerator()
         {
-            player.AddItem(new AttackItem("Bozdugan",300));
-            player.AddItem(new DefenseItem("Armor",350));
-            player.AddItem(new DefenseItem("Helm",50));
+            player.AddItem(new AttackItem("Bozdugan", 300));
+            player.AddItem(new DefenseItem("Armor", 350));
+            player.AddItem(new DefenseItem("Helm", 50));
             this.player.AddItem(new AttackItem("Bradva", 200));
 
         }
