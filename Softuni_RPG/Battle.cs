@@ -153,9 +153,9 @@ namespace Softuni_RPG
             }
             for (int i = 0; i < this.spells.Count(); i++)
             {
-                
+
                 //TODO fix constructor font
-               // graphics.DrawString(this.spells[i], new SolidBrush(Color.Yellow),System.Drawing.Font("Verdana", 10.0f), this.recs[i]);
+                graphics.DrawString(this.spells[i], new Font("Verdana", 10.0f), new SolidBrush(Color.Yellow), this.recs[i]);
             }
 
 
