@@ -1,10 +1,10 @@
-﻿using Softuni_RPG.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using Softuni_RPG.GameObjects.Entities;
 
 namespace Softuni_RPG.Map_and_World
 {

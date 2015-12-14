@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Softuni_RPG.Entities;
+﻿using Softuni_RPG.GameObjects.Entities;
 
-namespace Softuni_RPG.Spells
+namespace Softuni_RPG.GameObjects.Spells
 {
     public class HealingSpell : Spell
     {

@@ -1,5 +1,4 @@
-﻿using Softuni_RPG.Entities;
-using Softuni_RPG.Map_and_World;
+﻿using Softuni_RPG.Map_and_World;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Softuni_RPG.GameObjects.Entities;
+using Softuni_RPG.GameObjects.Items;
 
 namespace Softuni_RPG
 {
@@ -26,6 +27,8 @@ namespace Softuni_RPG
             InitializeComponent();
             player.X = 9;
             player.Y = 8;
+            player.Name = "Ivan";
+            ItemGenerator();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -46,7 +49,7 @@ namespace Softuni_RPG
                 }
             }
 
-            graphics.DrawImage(playerImage, new Point(player.X * 64, player.Y * 64 - 20));
+            graphics.DrawImage(playerImage, new Point(player.X * 64, player.Y * 64));
 
             if (inBattle)
             {
@@ -116,6 +119,10 @@ namespace Softuni_RPG
                         }
                     }
                     break;
+                case 'i':
+                    var inv = new Inventory(this.player);
+                    inv.ShowDialog();
+                    break;
             }
             this.Refresh();
         }
@@ -131,6 +138,15 @@ namespace Softuni_RPG
                     //TODO:
                     break;
             }
+        }
+
+        private void ItemGenerator()
+        {
+            player.AddItem(new AttackItem("Bozdugan",300));
+            player.AddItem(new DefenseItem("Armor",350));
+            player.AddItem(new DefenseItem("Helm",50));
+            this.player.AddItem(new AttackItem("Bradva", 200));
+
         }
     }
 }

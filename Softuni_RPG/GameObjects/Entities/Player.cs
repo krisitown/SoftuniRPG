@@ -1,19 +1,15 @@
-﻿using Softuni_RPG.Items;
-using Softuni_RPG.Map_and_World;
-using Softuni_RPG.Spells;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Softuni_RPG.GameObjects.Items;
+using Softuni_RPG.GameObjects.Spells;
 
-namespace Softuni_RPG.Entities
+namespace Softuni_RPG.GameObjects.Entities
 {
     public class Player : Entity
     {
         private List<Item> items;
         private List<Spell> spells;
-
+        private EquipableItem itemEquiped;
         public Player()
         {
             items = new List<Item>();
@@ -22,6 +18,8 @@ namespace Softuni_RPG.Entities
             spells.Add(new HealingSpell("Basic Heal", 20));
         }
 
+        public IList<Item> Items { get { return this.items; } }
+        public EquipableItem ItemEquiped { get { return this.itemEquiped; } set { this.itemEquiped = value; } }
         public void AddItem(Item item)
         {
             if (item == null)
@@ -31,6 +29,17 @@ namespace Softuni_RPG.Entities
             this.items.Add(item);
         }
 
+        public void EquipItem(EquipableItem item)
+        {
+            if (ItemEquiped != null)
+            {
+                this.Attack -= ItemEquiped.Attack;
+                this.Defense -= ItemEquiped.Defence;
+            }
+            this.Attack += item.Attack;
+            this.Defense += item.Defence;
+            ItemEquiped = item;
+        }
         public void RemoveItem(Item item)
         {
             if (item == null)
@@ -43,7 +52,7 @@ namespace Softuni_RPG.Entities
             }
             
         }
-
+        
         public void AddSpell(Spell spell)
         {
             if (spell == null)

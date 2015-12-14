@@ -44,20 +44,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Enemy.cs" />
-    <Compile Include="Entities\Player.cs" />
-    <Compile Include="Items\EquipableItem.cs" />
-    <Compile Include="Items\Interfaces\IEquipableItem.cs" />
-    <Compile Include="Items\Interfaces\IUsableItem.cs" />
-    <Compile Include="Items\Item.cs" />
-    <Compile Include="Items\Models\Cuirass.cs" />
-    <Compile Include="Items\Models\Helmet.cs" />
-    <Compile Include="Items\Models\LegArmor.cs" />
-    <Compile Include="Items\Models\Mace.cs" />
-    <Compile Include="Items\Models\Mantle.cs" />
-    <Compile Include="Items\Models\Shield.cs" />
-    <Compile Include="Items\Models\Spear.cs" />
-    <Compile Include="Items\UsableItem.cs" />
+    <Compile Include="GameObjects\Entities\Enemy.cs" />
+    <Compile Include="GameObjects\Entities\Player.cs" />
+    <Compile Include="GameObjects\Items\AttackItem.cs" />
+    <Compile Include="GameObjects\Items\DefenseItem.cs" />
+    <Compile Include="GameObjects\Items\EquipableItem.cs" />
+    <Compile Include="GameObjects\Items\Interfaces\IEquipableItem.cs" />
+    <Compile Include="GameObjects\Items\Interfaces\IUsableItem.cs" />
+    <Compile Include="GameObjects\Items\Item.cs" />
+    <Compile Include="GameObjects\Items\UsableItem.cs" />
+    <Compile Include="Inventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory.Designer.cs">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemUI.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,15 +67,15 @@
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Map_and_World\Cell.cs" />
-    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="GameObjects\Entities\Entity.cs" />
     <Compile Include="Map_and_World\Constants.cs" />
     <Compile Include="Map_and_World\Map.cs" />
     <Compile Include="Map_and_World\World.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Spells\DamageSpell.cs" />
-    <Compile Include="Spells\HealingSpell.cs" />
-    <Compile Include="Spells\Spell.cs" />
+    <Compile Include="GameObjects\Spells\DamageSpell.cs" />
+    <Compile Include="GameObjects\Spells\HealingSpell.cs" />
+    <Compile Include="GameObjects\Spells\Spell.cs" />
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>

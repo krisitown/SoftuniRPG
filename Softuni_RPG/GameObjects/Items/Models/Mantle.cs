@@ -1,4 +1,4 @@
-﻿namespace Softuni_RPG.Items.Models
+﻿namespace Softuni_RPG.GameObjects.Items.Models
 {
     public class Mantle:EquipableItem
     {

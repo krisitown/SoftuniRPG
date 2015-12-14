@@ -1,7 +1,7 @@
 ﻿using System;
 using Softuni_RPG.Map_and_World;
 
-namespace Softuni_RPG.Entities
+namespace Softuni_RPG.GameObjects.Entities
 {
     public abstract class Entity
     {
@@ -10,6 +10,7 @@ namespace Softuni_RPG.Entities
         private int y;
         private double hp;
         private double defense;
+        private double attack;
         private double maxHealth = Constants.maxPlayerHealth; 
 
         abstract public string Collision();
@@ -31,6 +32,8 @@ namespace Softuni_RPG.Entities
             get { return this.maxHealth; }
             protected set { this.maxHealth = value; }
         }
+
+        public double Attack { get { return this.attack; } set { this.attack = value; } }
 
         public double HP
         {

@@ -1,22 +1,19 @@
-﻿using Softuni_RPG.Map_and_World;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using Softuni_RPG.GameObjects.Entities;
+using System.Drawing;
 
-namespace Softuni_RPG.Items
+namespace Softuni_RPG.GameObjects.Items
 {
     public abstract class Item
     {
         private string name;
-
-        protected Item(string name) 
+        private Image img;
+        protected Item(string name,Image image) 
         {
+            this.img = image;
             this.Name = name;
         }
-
+        public Image ItemImage { get { return this.img; } }
         public string Name
         {
             get { return this.name; }
@@ -32,6 +29,6 @@ namespace Softuni_RPG.Items
 
         
 
-        public abstract void Use(Entity target);
+        public abstract void Use();
     }
 }

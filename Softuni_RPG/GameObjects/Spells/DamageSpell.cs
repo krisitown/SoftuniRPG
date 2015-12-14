@@ -1,8 +1,6 @@
-﻿using System;
-using Softuni_RPG.Entities;
-using Softuni_RPG.Map_and_World;
+﻿using Softuni_RPG.GameObjects.Entities;
 
-namespace Softuni_RPG.Spells
+namespace Softuni_RPG.GameObjects.Spells
 {
     public class DamageSpell : Spell
     {
