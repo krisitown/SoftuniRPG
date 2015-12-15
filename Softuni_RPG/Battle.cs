@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using Softuni_RPG.GameObjects.Entities;
+using Softuni_RPG.GameObjects.Spells;
 
 namespace Softuni_RPG
 {
@@ -24,7 +25,7 @@ namespace Softuni_RPG
         private List<Label> labels;
         private List<Rectangle> spellBoard;
         private List<string> spells;
-        private List<Rectangle> recs;
+        private List<Rectangle> rectangles;
         private int additionalPointsBetweenLabels = 15;
         public Battle(Player player, Enemy enemy)
         {
@@ -113,36 +114,57 @@ namespace Softuni_RPG
 
         private void DrawPlayerSpells()
         {
+            int spellsOnRow = 10;
+            int rows =1+this.Player.Spells.Count/10;
+            int leftSpellForLastRow = this.Player.Spells.Count % 10;
             int X = 10;
             int Y = this.additionalPointsBetweenLabels;
             int interval = 30;
             var spellContainerPoint = new Point(X, Y);
             var spellContainerSize = new Size(interval, interval);
-            for (int i = 0; i < 5; i++)
+            for (int r = 0; r <rows; r++)
             {
-                spellContainerPoint.X = X + (i * interval);
-                for (int j = 0; j < 2; j++)
+                spellContainerPoint.Y = Y + (r * interval);
+
+                int cols = r == rows - 1 ? leftSpellForLastRow : spellsOnRow;
+                for (int c = 0; c < cols; c++)
                 {
-                    spellContainerPoint.Y = Y + (j * interval);
+                    spellContainerPoint.X = X + (c * interval);
                     var spellContainer = new Rectangle(spellContainerPoint, spellContainerSize);
-                    this.spellBoard.Add(spellContainer);
-                   
+                    this.spellBoard.Add(spellContainer);  
                 }
             }
             this.spells=new List<string>();
-            this.recs = new List<Rectangle>();
+            this.rectangles = new List<Rectangle>();
             int spellsCount = 0;
             foreach (var spell in this.Player.Spells)
             {
                 spells.Add(spell.Name);
-                var tempRect = new Rectangle(this.spellBoard[spellsCount].X + 10, this.spellBoard[spellsCount].Y + 10,
-                    this.spellBoard[spellsCount].Width - 10,
-                    this.spellBoard[spellsCount].Height - 10);
-                this.recs.Add(tempRect);
+                var tempRect = new Rectangle(this.spellBoard[spellsCount].X , this.spellBoard[spellsCount].Y ,
+                    this.spellBoard[spellsCount].Width ,
+                    this.spellBoard[spellsCount].Height );
+                this.rectangles.Add(tempRect);
                 spellsCount++;
             }
 
         }
+
+        protected override void OnMouseDoubleClick(MouseEventArgs e)
+        {
+            var mouseRectangle = new Rectangle(e.X, e.Y, 0, 0);
+            for (int i = 0; i < this.rectangles.Count; i++)
+            {
+                if (this.rectangles[i].IntersectsWith(mouseRectangle))
+                {
+                    //todo fix finfing spell to use
+                    Spell spellToUse = this.player.Spells.FirstOrDefault(spell => spell.Name==null);
+                    this.player.RemoveSpell(spellToUse);
+
+                }
+            }
+            base.OnMouseDoubleClick(e);
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             var graphics = e.Graphics;
@@ -155,11 +177,16 @@ namespace Softuni_RPG
             {
 
                 //TODO fix constructor font
-                graphics.DrawString(this.spells[i], new Font("Verdana", 10.0f), new SolidBrush(Color.Yellow), this.recs[i]);
+                graphics.DrawString(this.spells[i], new Font("Verdana", 10.0f), new SolidBrush(Color.Yellow), this.rectangles[i]);
             }
 
 
             base.OnPaint(e);
+        }
+
+        protected override void OnMouseClick(MouseEventArgs e)
+        {
+          
         }
     }
 }

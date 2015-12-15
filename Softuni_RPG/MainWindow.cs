@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Softuni_RPG.GameObjects.Entities;
 using Softuni_RPG.GameObjects.Items;
+using Softuni_RPG.GameObjects.Spells;
 
 namespace Softuni_RPG
 {
@@ -136,10 +137,11 @@ namespace Softuni_RPG
             {
                 case "battle":
                     //this.inBattle = true;
-                    //TODO testing method with enemy
+                    //TODO testing method with enemy and other cahrdcored values
                     Enemy enem = new Enemy();
                     enem.Name = "Dragan";
                     var battle = new Battle(this.player,enem);
+                    this.player.Spells.Add(new HealingSpell("heeal", 102));
                     battle.ShowDialog();
 
                     break;
