@@ -41,6 +41,10 @@ namespace Softuni_RPG.GameObjects.Entities
             set
             {
                 //TODO: CHECK
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("HP", "Can't be less than zero!");
+                }
                 this.hp = value;
             }
         }
@@ -51,6 +55,10 @@ namespace Softuni_RPG.GameObjects.Entities
             set
             {
                 //TODO: CHECK
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Defense", "Can't be negative!");
+                }
                 this.defense = value;
             }
         }
@@ -64,6 +72,10 @@ namespace Softuni_RPG.GameObjects.Entities
             set
             {
                 //TODO: CHECK
+                if (value < 0 || value > 9)
+                {
+                    throw new ArgumentOutOfRangeException("Coordinate X", "Can't be negative or greater than 9!");
+                }
                 this.x = value;
             }
         }
@@ -77,6 +89,10 @@ namespace Softuni_RPG.GameObjects.Entities
             set
             {
                 //TODO: CHECK
+                if (value < 0 || value > 9)
+                {
+                    throw new ArgumentOutOfRangeException("Coordinate Y", "Can't be negative or greater than 9!");
+                }
                 this.y = value;
             }
         }
