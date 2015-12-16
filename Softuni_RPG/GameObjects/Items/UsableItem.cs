@@ -1,21 +1,17 @@
 ﻿using System;
 using Softuni_RPG.GameObjects.Entities;
+using Softuni_RPG.GameObjects.Interfaces;
 
 namespace Softuni_RPG.GameObjects.Items
 {
-    class UsableItem //: Item
+    public abstract class UsableItem : Item,IUsableItem
     {
+        protected UsableItem(string name, string imagePath)
+            : base(name,imagePath)
+        {
+        }
 
-        //public UsableItem(string name, int attack, int defense) : base(name)
-        //{
-
-        //}
-
-        //public override void Use()
-        //{
-            
-        //}
-
+        
         
     }
 }

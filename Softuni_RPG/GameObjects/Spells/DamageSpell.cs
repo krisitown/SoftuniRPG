@@ -1,18 +1,19 @@
 ﻿using Softuni_RPG.GameObjects.Entities;
+using Softuni_RPG.GameObjects.Interfaces;
 
 namespace Softuni_RPG.GameObjects.Spells
 {
     public class DamageSpell : Spell
     {
-        public DamageSpell(string name, double power) 
-            : base (name, power)
+        public DamageSpell(string name, string imagePath) 
+            : base (name, imagePath)
         {
         }
 
-        public override void Use(Entity target)
+        public override void Use(IEntity target)
         {
 
-            double producedDamage = this.Power - target.Defense;
+            double producedDamage = this.Power - target.Defence;
 
             if (producedDamage < 0)
             {

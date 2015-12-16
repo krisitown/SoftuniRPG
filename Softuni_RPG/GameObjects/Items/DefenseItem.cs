@@ -15,8 +15,8 @@ namespace Softuni_RPG.GameObjects.Items
         private const string itemDir = @"..\..\Resources\armor.png";
 
         private double defence;
-        public DefenseItem(string name, double defence)
-            : base(name, Image.FromFile(itemDir))
+        public DefenseItem(string name, string imagePath,double defence)
+            : base(name,imagePath)
         {
             this.Defence = defence;
         }

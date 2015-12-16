@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Softuni_RPG.GameObjects.Interfaces
 {
-    public interface IEntity:IGameObject,IPositionable,IAttackable,IDefencable
+    public interface IPositionable
+
     {
-        double MaxHealth { get; }
-        double HP { get; set; }
+        int X { get; }
+        int Y { get; }
     }
 }

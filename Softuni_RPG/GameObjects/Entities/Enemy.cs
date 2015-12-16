@@ -9,7 +9,7 @@ namespace Softuni_RPG.GameObjects.Entities
         private List<Item> items;
         private List<Spell> spells;
         private EquipableItem itemEquiped;
-        public Enemy()
+        public Enemy(string name,double maxHealth,string imagePath):base(name,maxHealth,imagePath)
         {
             //TODO the same as players
             items = new List<Item>();

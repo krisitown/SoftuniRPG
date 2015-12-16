@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Runtime.CompilerServices;
+using Softuni_RPG.GameObjects.Interfaces;
 using Softuni_RPG.GameObjects.Items;
 using Softuni_RPG.GameObjects.Spells;
 
@@ -36,16 +38,9 @@ namespace Softuni_RPG.GameObjects.Entities
             this.items.Add(item);
         }
 
-        public void EquipItem(EquipableItem item)
+        public void EquipItem(IEquipableItem item)
         {
-            if (ItemEquiped != null)
-            {
-                this.Attack -= ItemEquiped.Attack;
-                this.Defense -= ItemEquiped.Defence;
-            }
-            this.Attack += item.Attack;
-            this.Defense += item.Defence;
-            ItemEquiped = item;
+           
         }
         public void RemoveItem(Item item)
         {

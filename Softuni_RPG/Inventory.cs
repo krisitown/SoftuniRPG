@@ -79,7 +79,7 @@ namespace Softuni_RPG
             int itemsCount = 0;
             foreach (var item in player.Items)
             {
-                imgs.Add(item.ItemImage);
+                imgs.Add(item.Image);
                 var tempRect = new Rectangle(itemPanel[itemsCount].X + 10, itemPanel[itemsCount].Y + 10,
                     itemPanel[itemsCount].Width - 10,
                     itemPanel[itemsCount].Height - 10);
@@ -96,7 +96,7 @@ namespace Softuni_RPG
             playerDefenseUI = new Label();
             playerDefenseUI.Parent = this;
             playerDefenseUI.Location = new Point(450, 500);
-            playerDefenseUI.Text = String.Format("Defense: {0}", player.Defense);
+            playerDefenseUI.Text = String.Format("Defense: {0}", player.Defence);
             playerAttackUI = new Label();
             playerAttackUI.Parent = this;
             playerAttackUI.Location = new Point(450, 530);
@@ -113,7 +113,7 @@ namespace Softuni_RPG
 
         private void RefreshUI()
         {
-            playerDefenseUI.Text = String.Format("Defense: {0}", player.Defense);
+            playerDefenseUI.Text = String.Format("Defense: {0}", player.Defence);
             playerAttackUI.Text = String.Format("Attack: {0}", player.Attack);
             playerEquipedItemUI.Text = String.Format("Item:{0}", player.ItemEquiped != null ? player.ItemEquiped.Name : "None");
         }

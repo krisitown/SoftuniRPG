@@ -8,7 +8,7 @@ namespace Softuni_RPG.GameObjects.Items
     public abstract class EquipableItem : Item, IEquipableItem
     {
 
-        protected EquipableItem(string name, Image image) : base(name, image)
+        protected EquipableItem(string name, string imagePath) : base(name, imagePath)
         {
 
         }

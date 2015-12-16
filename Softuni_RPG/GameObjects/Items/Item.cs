@@ -4,31 +4,15 @@ using System.Drawing;
 
 namespace Softuni_RPG.GameObjects.Items
 {
-    public abstract class Item
+    public abstract class Item:GameObject
     {
       
-        private Image img;
-        protected Item(string name,Image image) 
+       
+        protected Item(string name,string imagePath) :base(name,imagePath)
         {
-            this.img = image;
-            this.Name = name;
+         
         }
-        public Image ItemImage { get { return this.img; } }
-        public string Name
-        {
-            get { return this.name; }
-            protected set
-            {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentNullException("The name of an item cannot be empty.");
-                }
-                this.name = value;
-            }
-        }
-
-        
-
+   
         public abstract void Use();
     }
 }

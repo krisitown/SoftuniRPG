@@ -1,29 +1,16 @@
 ﻿using System;
 using Softuni_RPG.GameObjects.Entities;
+using Softuni_RPG.GameObjects.Interfaces;
 
 namespace Softuni_RPG.GameObjects.Spells
 {
-    public abstract class Spell
+    public abstract class Spell:GameObject
     {
         private double power; //defines how much the spell will damage/heal
 
-        protected Spell(string name, double power)
-        {
-            this.Name = name;
+        protected Spell(string name, string imagePath):base(name,imagePath)
+        {  
             this.Power = power;
-        }
-
-        public string Name
-        {
-            get { return this.name; }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentNullException("The name of a spell cannot be empty.");
-                }
-                this.name = value;
-            }
         }
 
         public double Power
@@ -39,6 +26,6 @@ namespace Softuni_RPG.GameObjects.Spells
             }
         }
 
-        public abstract void Use(Entity target); //the target could be the player or the enemy depending on the type of spell
+        public abstract void Use(IEntity target); //the target could be the player or the enemy depending on the type of spell
     }
 }

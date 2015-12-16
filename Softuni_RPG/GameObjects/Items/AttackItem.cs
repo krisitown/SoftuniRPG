@@ -8,12 +8,12 @@ using Softuni_RPG.GameObjects.Interfaces;
 
 namespace Softuni_RPG.GameObjects.Items
 {
-    public class AttackItem :EquipableItem,IAttackItem
+    public class AttackItem :EquipableItem,IAttackable
     {
         private const double attackDefault = 10;
         private double attack;
         private const string itemDir = @"..\..\Resources\Iron_Axe.png";
-        public AttackItem(string name, double attack) : base(name,Image.FromFile(itemDir))
+        public AttackItem(string name, string imagePath ,double attack) : base(name,imagePath)
         {
             this.Attack = attack;
         }

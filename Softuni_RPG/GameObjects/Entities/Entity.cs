@@ -4,26 +4,33 @@ using Softuni_RPG.Map_and_World;
 
 namespace Softuni_RPG.GameObjects.Entities
 {
-    public abstract class Entity:GameObject,IAttackable,IDefencable
+    public abstract class Entity : GameObject, IEntity
     {
-       
+
         private int x;
         private int y;
         private double hp;
         private double defence;
         private double attack;
-        
+        private double maxHealth;
 
-        protected Entity(string name,double maxHealth,string imagePath):base(name,imagePath)
+
+        protected Entity(string name, double maxHealth, string imagePath)
+            : base(name, imagePath)
         {
             this.MaxHealth = maxHealth;
         }
 
         abstract public string Collision();
 
-     
-        public double MaxHealth {
-            get { return this.maxHealth; }
+
+        public double MaxHealth
+        {
+            get
+            {
+               
+                return this.maxHealth;
+            }
             protected set { this.maxHealth = value; }
         }
 
@@ -34,7 +41,7 @@ namespace Softuni_RPG.GameObjects.Entities
             get { return this.hp; }
             set
             {
-                
+
                 if (value < 0)
                 {
                     throw new ArgumentOutOfRangeException("HP", "Can't be less than zero!");
@@ -48,7 +55,7 @@ namespace Softuni_RPG.GameObjects.Entities
             get { return this.defence; }
             set
             {
-                
+
                 if (value < 0)
                 {
                     throw new ArgumentOutOfRangeException("Defense", "Can't be negative!");

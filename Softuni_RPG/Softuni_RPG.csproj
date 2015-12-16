@@ -58,6 +58,8 @@
     <Compile Include="GameObjects\Interfaces\IEntity.cs" />
     <Compile Include="GameObjects\Entities\Player.cs" />
     <Compile Include="GameObjects\Interfaces\IDefencable.cs" />
+    <Compile Include="GameObjects\Interfaces\IGameObject.cs" />
+    <Compile Include="GameObjects\Interfaces\IPositionable.cs" />
     <Compile Include="GameObjects\Items\AttackItem.cs" />
     <Compile Include="GameObjects\Items\DefenseItem.cs" />
     <Compile Include="GameObjects\Items\EquipableItem.cs" />

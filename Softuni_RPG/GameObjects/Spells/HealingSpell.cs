@@ -1,4 +1,5 @@
 ﻿using Softuni_RPG.GameObjects.Entities;
+using Softuni_RPG.GameObjects.Interfaces;
 
 namespace Softuni_RPG.GameObjects.Spells
 {
@@ -9,7 +10,7 @@ namespace Softuni_RPG.GameObjects.Spells
         {
         }
 
-        public override void Use(Entity target)
+        public override void Use(IEntity target)
         {
 
             double healedHealth = target.HP + this.Power;
