@@ -17,7 +17,7 @@ namespace Softuni_RPG
     public partial class MainWindow : Form
     {
         private Player player = new Player();
-        private Image playerImage = Image.FromFile(@"..\..\Resources\code_wizard.png");
+     
         private World world = new World(@"..\..\Map_and_World\Maps\");
         private Map map;
 
@@ -50,7 +50,7 @@ namespace Softuni_RPG
                 }
             }
 
-            graphics.DrawImage(playerImage, new Point(player.X * 64, player.Y * 64));
+            graphics.DrawImage(this.player.Image, new Point(player.X * 64, player.Y * 64));
 
             if (inBattle)
             {
@@ -140,8 +140,10 @@ namespace Softuni_RPG
                     //TODO testing method with enemy and other cahrdcored values
                     Enemy enem = new Enemy();
                     enem.Name = "Dragan";
-                    var battle = new Battle(this.player,enem);
+                    enem.HP = 20;
+                    player.HP = 20;
                     this.player.Spells.Add(new HealingSpell("heeal", 102));
+                    var battle = new Battle(this.player,enem);
                     battle.ShowDialog();
 
                     break;

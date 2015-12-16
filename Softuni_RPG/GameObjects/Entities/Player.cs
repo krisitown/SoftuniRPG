@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using Softuni_RPG.GameObjects.Items;
 using Softuni_RPG.GameObjects.Spells;
 
@@ -7,10 +8,14 @@ namespace Softuni_RPG.GameObjects.Entities
 {
     public class Player : Entity
     {
+
+        private  const string playerImagePath=@"..\..\Resources\code_wizard.png";
+        private const double maxHealth = 50;
+
         private List<Item> items;
         private List<Spell> spells;
         private EquipableItem itemEquiped;
-        public Player()
+        public Player(string name):base(name,maxHealth,playerImagePath)
         {
             items = new List<Item>();
             spells = new List<Spell>();
@@ -20,7 +25,8 @@ namespace Softuni_RPG.GameObjects.Entities
 
         public IList<Item> Items { get { return this.items; } }
         public EquipableItem ItemEquiped { get { return this.itemEquiped; } set { this.itemEquiped = value; } }
-        public List<Spell> Spells { get { return this.spells; } } 
+        public List<Spell> Spells { get { return this.spells; } }
+    
         public void AddItem(Item item)
         {
             if (item == null)
@@ -77,6 +83,11 @@ namespace Softuni_RPG.GameObjects.Entities
             
         }
 
+        public void UseSpell(Spell spell,Enemy enemy)
+        {
+            //TODO apply spells effect on enemies;
+            throw new NotImplementedException();
+        }
         public override string Collision()
         {
             throw new NotImplementedException();

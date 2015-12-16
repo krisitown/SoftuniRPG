@@ -6,7 +6,7 @@ namespace Softuni_RPG.GameObjects.Items
 {
     public abstract class Item
     {
-        private string name;
+      
         private Image img;
         protected Item(string name,Image image) 
         {

@@ -5,10 +5,9 @@ namespace Softuni_RPG.GameObjects.Spells
 {
     public abstract class Spell
     {
-        private string name;
         private double power; //defines how much the spell will damage/heal
 
-        public Spell(string name, double power)
+        protected Spell(string name, double power)
         {
             this.Name = name;
             this.Power = power;

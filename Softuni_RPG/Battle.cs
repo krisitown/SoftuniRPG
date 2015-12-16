@@ -24,16 +24,19 @@ namespace Softuni_RPG
         private Enemy enemy;
         private List<Label> labels;
         private List<Rectangle> spellBoard;
-        private List<string> spells;
+        private List<string> playersSpellsNames;
         private List<Rectangle> rectangles;
         private int additionalPointsBetweenLabels = 15;
+
+        private bool isPlayersTurn = true;
+
         public Battle(Player player, Enemy enemy)
         {
             InitializeComponent();
             this.Player = player;
             this.Enemy = enemy;
             this.labels = new List<Label>();
-            this.spellBoard=new List<Rectangle>();
+            this.spellBoard = new List<Rectangle>();
         }
 
         public Player Player { get { return this.player; } private set { this.player = value; } }
@@ -48,33 +51,17 @@ namespace Softuni_RPG
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackgroundImage = Image.FromFile(battleBackgroundDir);
             this.BackgroundImageLayout = ImageLayout.Stretch;
+            this.DrawLabels();
+            this.DrawPlayerSpells();
+     
 
-            DrawLabels();
-            DrawPlayerSpells();
             base.OnLoad(e);
         }
 
         private void BattleExecution()
         {
-            //by default players starts first
-            bool playersTurn = true;
-            while (true)
-            {
-                if (playersTurn)
-                {
-                    playersTurn = false;
-                }
-                else
-                {
-                    playersTurn = true;
-                }
-                if (this.Player.HP <= 0 || this.Enemy.HP <= 0)
-                {
-                    break;
-                }
 
-            }
-
+            
         }
         private void DrawLabels()
         {
@@ -105,24 +92,23 @@ namespace Softuni_RPG
             }
             enemyNameUI.Text = string.Format("Enemy Name : {0}", this.Enemy.Name);
             enemyAttackUI.Text = string.Format("Enemy Attack Points Left: {0}", this.Enemy.Attack);
-            enemyDefenseUI.Text = string.Format("Enemy Defence Points Left: {0}", this.Enemy.Defense);
+          //  enemyDefenseUI.Text = string.Format("Enemy Defence Points Left: {0}", this.Enemy.Defense);
             playerNameUI.Text = string.Format("Player Name : {0}", this.Player.Name);
             playerAttackUI.Text = string.Format("Player Attack Points Left: {0}", this.Player.Attack);
-            playerDefenseUI.Text = string.Format("Player Defence Points Left: {0}", this.Player.Defense);
-            DrawPlayerSpells();
+       //     playerDefenseUI.Text = string.Format("Player Defence Points Left: {0}", this.Player.Defense);
         }
 
         private void DrawPlayerSpells()
         {
             int spellsOnRow = 10;
-            int rows =1+this.Player.Spells.Count/10;
+            int rows = 1 + this.Player.Spells.Count / 10;
             int leftSpellForLastRow = this.Player.Spells.Count % 10;
             int X = 10;
             int Y = this.additionalPointsBetweenLabels;
-            int interval = 30;
+            int interval = 50;
             var spellContainerPoint = new Point(X, Y);
             var spellContainerSize = new Size(interval, interval);
-            for (int r = 0; r <rows; r++)
+            for (int r = 0; r < rows; r++)
             {
                 spellContainerPoint.Y = Y + (r * interval);
 
@@ -131,18 +117,19 @@ namespace Softuni_RPG
                 {
                     spellContainerPoint.X = X + (c * interval);
                     var spellContainer = new Rectangle(spellContainerPoint, spellContainerSize);
-                    this.spellBoard.Add(spellContainer);  
+                    this.spellBoard.Add(spellContainer);
                 }
             }
-            this.spells=new List<string>();
+
+            this.playersSpellsNames = new List<string>();
             this.rectangles = new List<Rectangle>();
             int spellsCount = 0;
             foreach (var spell in this.Player.Spells)
             {
-                spells.Add(spell.Name);
-                var tempRect = new Rectangle(this.spellBoard[spellsCount].X , this.spellBoard[spellsCount].Y ,
-                    this.spellBoard[spellsCount].Width ,
-                    this.spellBoard[spellsCount].Height );
+                playersSpellsNames.Add(spell.Name);
+                var tempRect = new Rectangle(this.spellBoard[spellsCount].X, this.spellBoard[spellsCount].Y,
+                    this.spellBoard[spellsCount].Width,
+                    this.spellBoard[spellsCount].Height);
                 this.rectangles.Add(tempRect);
                 spellsCount++;
             }
@@ -154,11 +141,16 @@ namespace Softuni_RPG
             var mouseRectangle = new Rectangle(e.X, e.Y, 0, 0);
             for (int i = 0; i < this.rectangles.Count; i++)
             {
-                if (this.rectangles[i].IntersectsWith(mouseRectangle))
+                if (this.isPlayersTurn && this.rectangles[i].IntersectsWith(mouseRectangle))
                 {
-                    //todo fix finfing spell to use
-                    Spell spellToUse = this.player.Spells.FirstOrDefault(spell => spell.Name==null);
-                    this.player.RemoveSpell(spellToUse);
+                    Spell spellToUse = this.Player.Spells.FirstOrDefault(spell => spell.Name == this.playersSpellsNames[i]);
+                    if (spellToUse == null)
+                    {
+                        throw new ArgumentNullException("Selected spell from board");
+                    }
+                    //uncomment after players useSpell method implementation;
+                    //this.Player.UseSpell(spellToUse,this.Enemy);
+                    this.Player.RemoveSpell(spellToUse);
 
                 }
             }
@@ -171,13 +163,11 @@ namespace Softuni_RPG
             Pen pen = new Pen(Color.Yellow);
             foreach (var spell in this.spellBoard)
             {
-                graphics.DrawRectangle(pen,spell);
+                graphics.DrawRectangle(pen, spell);
             }
-            for (int i = 0; i < this.spells.Count(); i++)
+            for (int i = 0; i < this.playersSpellsNames.Count(); i++)
             {
-
-                //TODO fix constructor font
-                graphics.DrawString(this.spells[i], new Font("Verdana", 10.0f), new SolidBrush(Color.Yellow), this.rectangles[i]);
+                graphics.DrawString(this.playersSpellsNames[i], new Font("Verdana", 10.0f), new SolidBrush(Color.Yellow), this.rectangles[i]);
             }
 
 
@@ -186,7 +176,7 @@ namespace Softuni_RPG
 
         protected override void OnMouseClick(MouseEventArgs e)
         {
-          
+
         }
     }
 }
