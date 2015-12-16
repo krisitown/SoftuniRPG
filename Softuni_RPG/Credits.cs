@@ -12,6 +12,7 @@ namespace Softuni_RPG
 {
     public partial class Credits : Form
     {
+        public bool showMainMenu = false;
         public Credits()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace Softuni_RPG
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new MainMenu().ShowDialog();
+            this.showMainMenu = true;
         }
     }
 }
