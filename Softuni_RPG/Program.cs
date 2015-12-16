@@ -14,10 +14,13 @@ namespace Softuni_RPG
         [STAThread]
         static void Main()
         {
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            Application.Run(new MainMenu());
+            if (MainMenu.newGame)
+            {
+                Application.Run(new MainWindow());
+            }
         }
     }
 }

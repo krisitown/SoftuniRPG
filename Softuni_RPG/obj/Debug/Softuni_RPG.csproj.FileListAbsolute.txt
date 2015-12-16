@@ -36,3 +36,15 @@ C:\Users\bacuty\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.Pr
 C:\Users\bacuty\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.csproj.GenerateResource.Cache
 C:\Users\bacuty\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.Battle.resources
 C:\Users\Pipi\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.Battle.resources
+C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\bin\Debug\Softuni_RPG.exe.config
+C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.exe
+C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.csprojResolveAssemblyReference.cache
+C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.Battle.resources
+C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.MainWindow.resources
+C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.Properties.Resources.resources
+C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.csproj.GenerateResource.Cache
+C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.pdb
+C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.Credits.resources
+C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.MainMenu.resources
+C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\bin\Debug\Softuni_RPG.exe
+C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\bin\Debug\Softuni_RPG.pdb
