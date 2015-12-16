@@ -1,12 +1,13 @@
-﻿using Softuni_RPG.GameObjects.Entities;
+﻿using System.Linq.Expressions;
+using Softuni_RPG.GameObjects.Entities;
 using Softuni_RPG.GameObjects.Interfaces;
 
 namespace Softuni_RPG.GameObjects.Spells
 {
     public class HealingSpell : Spell
     {
-        public HealingSpell(string name, double power) 
-            : base (name, power)
+        public HealingSpell(string name,string imagePath, double power) 
+            : base (name,imagePath,power)
         {
         }
 

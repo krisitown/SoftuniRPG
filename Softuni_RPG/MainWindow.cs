@@ -16,7 +16,7 @@ namespace Softuni_RPG
 {
     public partial class MainWindow : Form
     {
-        private Player player = new Player();
+        private Player player = new Player("Student");
      
         private World world = new World(@"..\..\Map_and_World\Maps\");
         private Map map;
@@ -28,7 +28,6 @@ namespace Softuni_RPG
             InitializeComponent();
             player.X = 9;
             player.Y = 8;
-            player.Name = "Ivan";
             ItemGenerator();
         }
 
@@ -138,11 +137,10 @@ namespace Softuni_RPG
                 case "battle":
                     //this.inBattle = true;
                     //TODO testing method with enemy and other cahrdcored values
-                    Enemy enem = new Enemy();
-                    enem.Name = "Dragan";
+                    Enemy enem = new Enemy("Dragan",100);                 
                     enem.HP = 20;
                     player.HP = 20;
-                    this.player.Spells.Add(new HealingSpell("heeal", 102));
+       
                     var battle = new Battle(this.player,enem);
                     battle.ShowDialog();
 
@@ -155,10 +153,10 @@ namespace Softuni_RPG
 
         private void ItemGenerator()
         {
-            player.AddItem(new AttackItem("Bozdugan", 300));
-            player.AddItem(new DefenseItem("Armor", 350));
-            player.AddItem(new DefenseItem("Helm", 50));
-            this.player.AddItem(new AttackItem("Bradva", 200));
+            this.player.AddItem(new EquipableItem("Bozdugan",@"..\..\Resources\Iron_Axe.png", 300,0));
+            this.player.AddItem(new EquipableItem("Armor",@"..\..\Resources\Iron_Axe.png",0, 350));
+            this.player.AddItem(new EquipableItem("Helm",@"..\..\Resources\Iron_Axe.png",0, 50));
+            this.player.AddItem(new EquipableItem("Bradva",@"..\..\Resources\Iron_Axe.png", 200,0));
 
         }
     }

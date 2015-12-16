@@ -1,6 +1,6 @@
 ﻿namespace Softuni_RPG.GameObjects.Interfaces
 {
-    public interface IEquipableItem
+    public interface IEquipableItem:IAttackable,IDefencable
     {
     
     }

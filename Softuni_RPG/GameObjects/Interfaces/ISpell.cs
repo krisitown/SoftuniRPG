@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Softuni_RPG.GameObjects.Interfaces
 {
-    interface IDefenceItem:IEquipableItem,IDefencable
-    {
-    }
+   public interface IHealabale
+   {
+       double Healing();
+   }
 }

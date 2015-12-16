@@ -8,7 +8,7 @@ namespace Softuni_RPG.GameObjects.Spells
     {
         private double power; //defines how much the spell will damage/heal
 
-        protected Spell(string name, string imagePath):base(name,imagePath)
+        protected Spell(string name, string imagePath,double power):base(name,imagePath)
         {  
             this.Power = power;
         }

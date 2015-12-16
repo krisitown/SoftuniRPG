@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Softuni_RPG.GameObjects.Interfaces
 {
-    public interface IAttackItem:IEquipableItem,IAttackable
+    public interface IDamagable
     {
     }
 }

@@ -31,10 +31,7 @@ namespace Softuni_RPG.GameObjects
                 {
                     throw new ArgumentNullException("Name cannot be empty.");
                 }
-                if (value.Trim().Length < minLenghtName || value.Trim().Length > maxLenghtName)
-                {
-                    throw new ArgumentOutOfRangeException(string.Format("Name should be more than {0} and {1}", minLenghtName, maxLenghtName));
-                }
+               
                 this.name = value;
             }
         }

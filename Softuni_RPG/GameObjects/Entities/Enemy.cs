@@ -6,16 +6,17 @@ namespace Softuni_RPG.GameObjects.Entities
 {
     public class Enemy : Entity
     {
+        private const string imagePath = @"..\..\Resources\enemy.jpg";
         private List<Item> items;
         private List<Spell> spells;
         private EquipableItem itemEquiped;
-        public Enemy(string name,double maxHealth,string imagePath):base(name,maxHealth,imagePath)
+        public Enemy(string name,double maxHealth):base(name,maxHealth,imagePath)
         {
             //TODO the same as players
             items = new List<Item>();
-            spells = new List<Spell>();
-            spells.Add(new DamageSpell("Basic Attack", 20));
-            spells.Add(new HealingSpell("Basic Heal", 20));
+            this.spells = new List<Spell>();
+            this.spells.Add(new DamageSpell("Basic Attack", @"..\..\Resources\basicDamageSpell.png", 20));
+            this.spells.Add(new HealingSpell("Basic Heal", @"..\..\Resources\basicHealingSpell.jpg", 20));
         }
 
         public override string Collision()

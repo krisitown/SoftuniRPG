@@ -21,8 +21,9 @@ namespace Softuni_RPG.GameObjects.Entities
         {
             items = new List<Item>();
             spells = new List<Spell>();
-            spells.Add(new DamageSpell("Basic Attack", 20));
-            spells.Add(new HealingSpell("Basic Heal", 20));
+            
+            //this.spells.Add(new DamageSpell("Basic Attack",@"..\..\Resources\basicDamageSpell.png",20));
+            //this.spells.Add(new HealingSpell("Basic Heal", @"..\..\Resources\basicHealingSpell.jpg", 20));
         }
 
         public IList<Item> Items { get { return this.items; } }

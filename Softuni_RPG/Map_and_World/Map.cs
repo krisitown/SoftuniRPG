@@ -49,7 +49,8 @@ namespace Softuni_RPG.Map_and_World
                             this.cells[row,col] = new Cell(false, wallImage);
                             break;
                         case 'e':
-                            this.cells[row,col] = new Cell(true, battleImage, new Enemy());
+                            //TODO
+                            this.cells[row,col] = new Cell(true, battleImage, new Enemy("Enemies",100));
                             break;
                     }
                 }
