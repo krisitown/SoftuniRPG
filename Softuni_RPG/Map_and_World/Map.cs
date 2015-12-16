@@ -14,7 +14,7 @@ namespace Softuni_RPG.Map_and_World
         private Image image = Image.FromFile(@"..\..\Resources\woodTile.png");
         private Image wallImage = Image.FromFile(@"..\..\Resources\brickTile.png");
         private Image battleImage = Image.FromFile(@"..\..\Resources\battleTile.png");
-
+     
         public Map(string mathPath)
         {
             InitializeCells(mathPath);
