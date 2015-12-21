@@ -4,6 +4,10 @@ namespace Softuni_RPG.Resources
 {
     public static class Constants
     {
+        internal const int maxX = 9;
+        internal const int maxY = 9;
+        internal const int minX = 0;
+        internal const int minY = 0;
 
         internal const double maxPlayerHealth = 100;
         internal const double maxEnemyHealth = 100;
@@ -16,6 +20,7 @@ namespace Softuni_RPG.Resources
         //
         internal const string basicDamageSpellName = "Basic Damage";
         internal const string basicHealSpellName = "Basic Heal";
+        
 
 
         //File paths;

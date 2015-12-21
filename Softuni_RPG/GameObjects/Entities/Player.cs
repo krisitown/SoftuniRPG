@@ -93,8 +93,7 @@ namespace Softuni_RPG.GameObjects.Entities
 
         public void UseSpell(Spell spell, Enemy enemy)
         {
-            //TODO apply spells effect on enemies;
-            throw new NotImplementedException();
+            spell.Use(enemy);
         }
         public override string Collision()
         {

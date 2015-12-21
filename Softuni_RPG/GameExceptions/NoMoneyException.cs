@@ -9,7 +9,7 @@ namespace Softuni_RPG.GameObjects.Items
 {
     public class NoMoneyException:System.Exception
     {
-        public NoMoneyException(string msg):base(msg)
+        public NoMoneyException():base(msg)
         {
                 
         }
