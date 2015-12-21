@@ -9,7 +9,7 @@ using Softuni_RPG.Resources;
 
 namespace Softuni_RPG.GameObjects.Items
 {
-    public class EquipableItem : Item, IEquipable
+    public class EquipableItem : Item, IEquipableItem
     {
         private double attack;
         private double defence;

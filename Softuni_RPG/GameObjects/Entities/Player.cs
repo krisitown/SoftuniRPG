@@ -25,7 +25,18 @@ namespace Softuni_RPG.GameObjects.Entities
             this.spells.Add(new HealingSpell(Constants.basicHealSpellName, Constants.basicHealingSpellPath, 20));
             this.Money = Constants.PlayerDefaultMoney;
         }
-
+        public decimal Money
+        {
+            get { return this.money; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("money", "Money can not be negative");
+                }
+                this.money = value;
+            }
+        }
         public IList<IItem> Items { get { return this.items; } }
         public EquipableItem ItemEquiped { get { return this.itemEquiped; } set { this.itemEquiped = value; } }
         public List<Spell> Spells { get { return this.spells; } }
@@ -39,7 +50,7 @@ namespace Softuni_RPG.GameObjects.Entities
             this.items.Add(item);
         }
 
-        public void EquipItem(IEquipable item)
+        public void EquipItem(IEquipableItem item)
         {
             this.Defence += item.Defence;
             this.Attack += item.Attack;
@@ -90,22 +101,15 @@ namespace Softuni_RPG.GameObjects.Entities
             throw new NotImplementedException();
         }
 
-        public decimal Money
-        {
-            get { return this.money; }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException("money","Money can not be negative");
-                }
-                this.money = value;
-            }
-        }
+      
 
         public void BuyItem(IItem item)
         {
-           
+            if (item.Price > this.Money)
+            {
+                throw new NoMoneyException("Player does not have enough money to bye item");
+            }
+
         }
     }
 }

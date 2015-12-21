@@ -1,6 +1,6 @@
 ﻿namespace Softuni_RPG.GameObjects.Interfaces
 {
-   public  interface IUsable
+   public  interface IUsableItem
    {
        void ApplyEffect();
    }
