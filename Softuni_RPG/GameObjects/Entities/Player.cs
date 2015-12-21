@@ -30,7 +30,7 @@ namespace Softuni_RPG.GameObjects.Entities
         public EquipableItem ItemEquiped { get { return this.itemEquiped; } set { this.itemEquiped = value; } }
         public List<Spell> Spells { get { return this.spells; } }
 
-        public void AddItem(Item item)
+        public void AddItem(IItem item)
         {
             if (item == null)
             {

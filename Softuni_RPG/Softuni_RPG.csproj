@@ -59,7 +59,6 @@
     <Compile Include="GameObjects\Entities\Enemy.cs" />
     <Compile Include="GameObjects\GameObject.cs" />
     <Compile Include="GameObjects\Interfaces\IAttackable.cs" />
-    <Compile Include="GameObjects\Interfaces\IDamagable.cs" />
     <Compile Include="GameObjects\Interfaces\IEntity.cs" />
     <Compile Include="GameObjects\Entities\Player.cs" />
     <Compile Include="GameObjects\Interfaces\IDefencable.cs" />

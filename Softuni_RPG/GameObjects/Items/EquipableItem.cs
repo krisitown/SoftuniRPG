@@ -5,6 +5,7 @@ using System.Threading;
 using System.Windows.Forms.VisualStyles;
 using Softuni_RPG.GameObjects.Entities;
 using Softuni_RPG.GameObjects.Interfaces;
+using Softuni_RPG.Resources;
 
 namespace Softuni_RPG.GameObjects.Items
 {
@@ -13,7 +14,7 @@ namespace Softuni_RPG.GameObjects.Items
         private double attack;
         private double defence;
         public EquipableItem(string name, string imagePath, double attack, double defence)
-            : base(name, imagePath)
+            : base(name, imagePath,Constants.EquipedItemDefaultPRice)
         {
             this.Attack = attack;
             this.Defence = defence;
