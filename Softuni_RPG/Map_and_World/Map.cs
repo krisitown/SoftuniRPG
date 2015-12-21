@@ -5,15 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using Softuni_RPG.GameObjects.Entities;
+using Softuni_RPG.Resources;
 
 namespace Softuni_RPG.Map_and_World
 {
     public class Map
     {
         private Cell[,] cells;
-        private Image image = Image.FromFile(@"..\..\Resources\woodTile.png");
-        private Image wallImage = Image.FromFile(@"..\..\Resources\brickTile.png");
-        private Image battleImage = Image.FromFile(@"..\..\Resources\battleTile.png");
+        private Image image = Image.FromFile(Constants.woodTileImage);
+        private Image wallImage = Image.FromFile(Constants.brickTileImage);
+        private Image battleImage = Image.FromFile(Constants.battleTileImage);
      
         public Map(string mathPath)
         {
@@ -50,7 +51,7 @@ namespace Softuni_RPG.Map_and_World
                             break;
                         case 'e':
                             //TODO
-                            this.cells[row,col] = new Cell(true, battleImage, new Enemy("Enemies",100));
+                            this.cells[row,col] = new Cell(true, battleImage, new Enemy(Constants.enemyImagePath,Constants.maxEnemyHealth));
                             break;
                     }
                 }

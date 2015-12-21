@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using Softuni_RPG.GameObjects.Entities;
+using Softuni_RPG.GameObjects.Interfaces;
 
 namespace Softuni_RPG.Map_and_World
 {
     public class Cell
     {
         private bool isOccupied = false;
-        private Entity occupator;
+        private IEntity occupator;
         private bool isPassable;
         private Image image;
        
@@ -44,7 +45,7 @@ namespace Softuni_RPG.Map_and_World
             private set { this.image = value; }
         }
 
-        public Entity Occupator
+        public IEntity Occupator
         {
             get { return this.occupator; }
             set { this.occupator = value; }

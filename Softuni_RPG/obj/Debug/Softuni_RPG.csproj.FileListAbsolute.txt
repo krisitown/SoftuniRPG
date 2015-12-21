@@ -48,3 +48,5 @@ C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.
 C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.MainMenu.resources
 C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\bin\Debug\Softuni_RPG.exe
 C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\bin\Debug\Softuni_RPG.pdb
+C:\Users\bacuty\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.Credits.resources
+C:\Users\bacuty\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.MainMenu.resources

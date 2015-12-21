@@ -42,7 +42,12 @@ namespace Softuni_RPG
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Credits().Show();
+            var credits = new Credits();
+            credits.ShowDialog();
+            if (credits.showMainMenu)
+            {
+                this.Show();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)

@@ -21,5 +21,8 @@ namespace Softuni_RPG.Resources
         internal const string enemyImagePath = @"..\..\Resources\enemy.jpg";
         internal const string basicDamageSpellPath = @"..\..\Resources\basicDamageSpell.png";
         internal const string basicHealingSpellPath = @"..\..\Resources\basicHealingSpell.jpg";
+        internal const string woodTileImage = @"..\..\Resources\woodTile.png";
+        internal const string brickTileImage = @"..\..\Resources\brickTile.png";
+        internal const string battleTileImage = @"..\..\Resources\battleTile.png";
     }
 }

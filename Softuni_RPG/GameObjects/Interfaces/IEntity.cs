@@ -10,5 +10,6 @@ namespace Softuni_RPG.GameObjects.Interfaces
     {
         double MaxHealth { get; }
         double HP { get; set; }
+        string Collision();
     }
 }
