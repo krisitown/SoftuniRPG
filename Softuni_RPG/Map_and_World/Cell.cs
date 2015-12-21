@@ -12,11 +12,14 @@ namespace Softuni_RPG.Map_and_World
     public class Cell
     {
         private bool isOccupied = false;
-        private IEntity occupator;
+        private Enemy occupator;
+        private IItem item;
+        private bool hasItem;
+
         private bool isPassable;
         private Image image;
        
-        public Cell(bool isPassable, Image image, IEntity occupator = null)
+        public Cell(bool isPassable, Image image, IItem item = null, Enemy occupator = null)
         {
             this.Image = image;
             this.IsPassable = isPassable;
@@ -25,6 +28,23 @@ namespace Softuni_RPG.Map_and_World
                 this.Occupator = occupator;
                 this.isOccupied = true;
             }
+            if (item != null)
+            {
+                this.Item = item;
+                this.HasItem = true;
+            }
+        }
+
+        public IItem Item
+        {
+            get { return item; }
+            set { item = value; }
+        }
+
+        public bool HasItem
+        {
+            get { return hasItem; }
+            set { hasItem = value; }
         }
 
         public bool IsOccupied
@@ -42,10 +62,17 @@ namespace Softuni_RPG.Map_and_World
         public Image Image
         {
             get { return this.image; }
-            private set { this.image = value; }
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("The image of a cell cannot be with the value of null");
+                }
+                this.image = value;
+            }
         }
 
-        public IEntity Occupator
+        public Enemy Occupator
         {
             get { return this.occupator; }
             set { this.occupator = value; }

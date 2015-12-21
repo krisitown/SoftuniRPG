@@ -26,5 +26,7 @@ namespace Softuni_RPG.Resources
         internal const string woodTileImage = @"..\..\Resources\woodTile.png";
         internal const string brickTileImage = @"..\..\Resources\brickTile.png";
         internal const string battleTileImage = @"..\..\Resources\battleTile.png";
+        internal const string itemTileImage = @"..\..\Resources\itemTile.png";
+        internal const string itemImage = @"..\..\Resources\Iron_Axe.png";
     }
 }

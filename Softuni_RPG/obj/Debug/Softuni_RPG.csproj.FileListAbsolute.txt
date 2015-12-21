@@ -50,3 +50,6 @@ C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\bin\Debug\Softuni_RPG.
 C:\Users\todorkir\Documents\GitHub\SoftuniRPG\Softuni_RPG\bin\Debug\Softuni_RPG.pdb
 C:\Users\bacuty\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.Credits.resources
 C:\Users\bacuty\Documents\GitHub\SoftuniRPG\Softuni_RPG\obj\Debug\Softuni_RPG.MainMenu.resources
+C:\Users\User1\Documents\Visual Studio 2013\Projects\Team_Project\Softuni_RPG\Softuni_RPG\obj\Debug\Softuni_RPG.Battle.resources
+C:\Users\User1\Documents\Visual Studio 2013\Projects\Team_Project\Softuni_RPG\Softuni_RPG\obj\Debug\Softuni_RPG.Credits.resources
+C:\Users\User1\Documents\Visual Studio 2013\Projects\Team_Project\Softuni_RPG\Softuni_RPG\obj\Debug\Softuni_RPG.MainMenu.resources

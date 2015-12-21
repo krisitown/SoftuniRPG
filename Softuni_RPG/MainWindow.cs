@@ -9,8 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Softuni_RPG.GameObjects.Entities;
+using Softuni_RPG.GameObjects.Interfaces;
 using Softuni_RPG.GameObjects.Items;
 using Softuni_RPG.GameObjects.Spells;
+using Softuni_RPG.Resources;
 
 namespace Softuni_RPG
 {
@@ -74,6 +76,12 @@ namespace Softuni_RPG
                             {
                                 HandleCollision();
                             }
+                            else if (this.map.Cells[player.Y, player.X].HasItem)
+                            {
+                                GetItem(this.map.Cells[player.Y, player.X].Item);
+                                this.map.Cells[player.Y, player.X].HasItem = false;
+                                this.map.Cells[player.Y, player.X].Image = Image.FromFile(Constants.woodTileImage);
+                            }
                         }
                     }
                     break;
@@ -89,6 +97,12 @@ namespace Softuni_RPG
                                 {
                                     HandleCollision();
                                 }
+                                else if (this.map.Cells[player.Y, player.X].HasItem)
+                                {
+                                    GetItem(this.map.Cells[player.Y, player.X].Item);
+                                    this.map.Cells[player.Y, player.X].HasItem = false;
+                                    this.map.Cells[player.Y, player.X].Image = Image.FromFile(Constants.woodTileImage);
+                                }
                             }
                         }
                     }
@@ -103,6 +117,12 @@ namespace Softuni_RPG
                             {
                                 HandleCollision();
                             }
+                            else if (this.map.Cells[player.Y, player.X].HasItem)
+                            {
+                                GetItem(this.map.Cells[player.Y, player.X].Item);
+                                this.map.Cells[player.Y, player.X].HasItem = false;
+                                this.map.Cells[player.Y, player.X].Image = Image.FromFile(Constants.woodTileImage);
+                            }
                         }
                     }
                     break;
@@ -115,6 +135,13 @@ namespace Softuni_RPG
                             if (this.map.Cells[player.Y, player.X].IsOccupied)
                             {
                                 HandleCollision();
+
+                            }
+                            else if (this.map.Cells[player.Y, player.X].HasItem)
+                            {
+                                GetItem(this.map.Cells[player.Y, player.X].Item);
+                                this.map.Cells[player.Y, player.X].HasItem = false;
+                                this.map.Cells[player.Y, player.X].Image = Image.FromFile(Constants.woodTileImage);
                             }
                         }
                     }
@@ -137,18 +164,21 @@ namespace Softuni_RPG
                 case "battle":
                     //this.inBattle = true;
                     //TODO testing method with enemy and other cahrdcored values
-                    Enemy enem = new Enemy("Dragan",100);                 
-                    enem.HP = 20;
-                    player.HP = 20;
+                    Enemy enem = this.map.Cells[player.Y, player.X].Occupator;                 //this way you will be fighting the actual enemy on the cell
        
                     var battle = new Battle(this.player,enem);
                     battle.ShowDialog();
 
                     break;
                 case "item":
-                    //TODO:
+                    //TODO
                     break;
             }
+        }
+
+        private void GetItem(IItem item)
+        {
+            player.Items.Add(item);
         }
 
         private void ItemGenerator()

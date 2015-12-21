@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using Softuni_RPG.Factories;
 using Softuni_RPG.GameObjects.Entities;
 using Softuni_RPG.GameObjects.Interfaces;
+using Softuni_RPG.GameObjects.Items;
 using Softuni_RPG.Resources;
 
 namespace Softuni_RPG.Map_and_World
@@ -16,7 +18,9 @@ namespace Softuni_RPG.Map_and_World
         private Image image = Image.FromFile(Constants.woodTileImage);
         private Image wallImage = Image.FromFile(Constants.brickTileImage);
         private Image battleImage = Image.FromFile(Constants.battleTileImage);
-     
+        private Image itemImage = Image.FromFile(Constants.itemTileImage);
+
+
         public Map(string mathPath)
         {
             InitializeCells(mathPath);
@@ -51,8 +55,11 @@ namespace Softuni_RPG.Map_and_World
                             this.cells[row,col] = new Cell(false, wallImage);
                             break;
                         case 'e':
-                            IEntity occupator = new Enemy(Constants.enemyImagePath, Constants.maxEnemyHealth);
-                            this.cells[row,col] = new Cell(true,occupator.Image,occupator );
+                            this.cells[row, col] = new Cell(true, Image.FromFile(Constants.enemyImagePath), null,
+                                RandomFactory.CreatEnemy());
+                            break;
+                        case 'i':
+                            this.cells[row, col] = new Cell(true, itemImage, RandomFactory.CreateItem()); 
                             break;
                     }
                 }
