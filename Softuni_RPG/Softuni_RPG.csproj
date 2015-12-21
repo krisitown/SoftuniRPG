@@ -64,12 +64,16 @@
     <Compile Include="GameObjects\Entities\Player.cs" />
     <Compile Include="GameObjects\Interfaces\IDefencable.cs" />
     <Compile Include="GameObjects\Interfaces\IGameObject.cs" />
+    <Compile Include="GameObjects\Interfaces\IItem.cs" />
+    <Compile Include="GameObjects\Interfaces\IPayable.cs" />
+    <Compile Include="GameObjects\Interfaces\IPlayer.cs" />
     <Compile Include="GameObjects\Interfaces\IPositionable.cs" />
-    <Compile Include="GameObjects\Interfaces\ISpell.cs" />
+    <Compile Include="GameObjects\Interfaces\IHealable.cs" />
     <Compile Include="GameObjects\Items\EquipableItem.cs" />
-    <Compile Include="GameObjects\Interfaces\IEquipableItem.cs" />
-    <Compile Include="GameObjects\Interfaces\IUsableItem.cs" />
+    <Compile Include="GameObjects\Interfaces\IEquipable.cs" />
+    <Compile Include="GameObjects\Interfaces\IUsable.cs" />
     <Compile Include="GameObjects\Items\Item.cs" />
+    <Compile Include="GameExceptions\NoMoneyException.cs" />
     <Compile Include="GameObjects\Items\UsableItem.cs" />
     <Compile Include="Inventory.cs">
       <SubType>Form</SubType>

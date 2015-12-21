@@ -16,7 +16,7 @@ namespace Softuni_RPG.Map_and_World
         private bool isPassable;
         private Image image;
        
-        public Cell(bool isPassable, Image image, Entity occupator = null)
+        public Cell(bool isPassable, Image image, IEntity occupator = null)
         {
             this.Image = image;
             this.IsPassable = isPassable;

@@ -4,7 +4,7 @@ using Softuni_RPG.GameObjects.Interfaces;
 
 namespace Softuni_RPG.GameObjects.Items
 {
-    public abstract class UsableItem : Item,IUsableItem
+    public abstract class UsableItem : Item,IUsable
     {
         protected UsableItem(string name, string imagePath)
             : base(name,imagePath)

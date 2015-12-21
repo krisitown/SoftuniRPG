@@ -10,22 +10,23 @@ using Softuni_RPG.Resources;
 
 namespace Softuni_RPG.GameObjects.Entities
 {
-    public class Player : Entity
+    public class Player : Entity,IPlayer
     {
-
-        private List<Item> items;
+        private decimal money;
+        private List<IItem> items;
         private List<Spell> spells;
         private EquipableItem itemEquiped;
         public Player(string name)
             : base(name, Constants.maxPlayerHealth, Constants.playerImagePath)
         {
-            items = new List<Item>();
+            items = new List<IItem>();
             spells = new List<Spell>();
             this.spells.Add(new DamageSpell(Constants.basicDamageSpellName, Constants.basicDamageSpellPath, 20));
             this.spells.Add(new HealingSpell(Constants.basicHealSpellName, Constants.basicHealingSpellPath, 20));
+            this.Money = Constants.PlayerDefaultMoney;
         }
 
-        public IList<Item> Items { get { return this.items; } }
+        public IList<IItem> Items { get { return this.items; } }
         public EquipableItem ItemEquiped { get { return this.itemEquiped; } set { this.itemEquiped = value; } }
         public List<Spell> Spells { get { return this.spells; } }
 
@@ -38,11 +39,12 @@ namespace Softuni_RPG.GameObjects.Entities
             this.items.Add(item);
         }
 
-        public void EquipItem(IEquipableItem item)
+        public void EquipItem(IEquipable item)
         {
-
+            this.Defence += item.Defence;
+            this.Attack += item.Attack;
         }
-        public void RemoveItem(Item item)
+        public void RemoveItem(IItem item)
         {
             if (item == null)
             {
@@ -86,6 +88,24 @@ namespace Softuni_RPG.GameObjects.Entities
         public override string Collision()
         {
             throw new NotImplementedException();
+        }
+
+        public decimal Money
+        {
+            get { return this.money; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("money","Money can not be negative");
+                }
+                this.money = value;
+            }
+        }
+
+        public void BuyItem(IItem item)
+        {
+           
         }
     }
 }

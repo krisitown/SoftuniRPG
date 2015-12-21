@@ -9,6 +9,7 @@ namespace Softuni_RPG.Resources
         internal const double maxEnemyHealth = 100;
         internal static readonly double mapRows = 10;
         internal static readonly double mapCols = 10;
+        internal const decimal PlayerDefaultMoney = 500;
 
 
         //
@@ -18,7 +19,7 @@ namespace Softuni_RPG.Resources
 
         //File paths;
         internal const string playerImagePath = @"..\..\Resources\code_wizard.png";
-        internal const string enemyImagePath = @"..\..\Resources\enemy.jpg";
+        internal const string enemyImagePath = @"..\..\Resources\battleTile.png";
         internal const string basicDamageSpellPath = @"..\..\Resources\basicDamageSpell.png";
         internal const string basicHealingSpellPath = @"..\..\Resources\basicHealingSpell.jpg";
         internal const string woodTileImage = @"..\..\Resources\woodTile.png";

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using Softuni_RPG.GameObjects.Entities;
+using Softuni_RPG.GameObjects.Interfaces;
 using Softuni_RPG.Resources;
 
 namespace Softuni_RPG.Map_and_World
@@ -50,8 +51,8 @@ namespace Softuni_RPG.Map_and_World
                             this.cells[row,col] = new Cell(false, wallImage);
                             break;
                         case 'e':
-                            //TODO
-                            this.cells[row,col] = new Cell(true, battleImage, new Enemy(Constants.enemyImagePath,Constants.maxEnemyHealth));
+                            IEntity occupator = new Enemy(Constants.enemyImagePath, Constants.maxEnemyHealth);
+                            this.cells[row,col] = new Cell(true,occupator.Image,occupator );
                             break;
                     }
                 }

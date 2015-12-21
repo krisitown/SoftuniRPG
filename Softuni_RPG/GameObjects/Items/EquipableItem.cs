@@ -8,7 +8,7 @@ using Softuni_RPG.GameObjects.Interfaces;
 
 namespace Softuni_RPG.GameObjects.Items
 {
-    public class EquipableItem : Item, IEquipableItem
+    public class EquipableItem : Item, IEquipable
     {
         private double attack;
         private double defence;
