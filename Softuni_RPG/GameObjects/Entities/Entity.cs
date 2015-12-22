@@ -1,6 +1,7 @@
 ﻿using System;
 using Softuni_RPG.GameObjects.Interfaces;
 using Softuni_RPG.Map_and_World;
+using Softuni_RPG.Resources;
 
 namespace Softuni_RPG.GameObjects.Entities
 {
@@ -72,10 +73,10 @@ namespace Softuni_RPG.GameObjects.Entities
             }
             set
             {
-                //TODO: CHECK
-                if (value < 0 || value > 9)
+                
+                if (value < Constants.minX || value > Constants.maxX)
                 {
-                    throw new ArgumentOutOfRangeException("Coordinate X", "Can't be negative or greater than 9!");
+                    throw new ArgumentOutOfRangeException("Coordinate X", string.Format("Can't be less than {0} or greater than {1}!", Constants.minX, Constants.maxX));
                 }
                 this.x = value;
             }
@@ -89,10 +90,10 @@ namespace Softuni_RPG.GameObjects.Entities
             }
             set
             {
-                //TODO: CHECK
-                if (value < 0 || value > 9)
+                
+                if (value < Constants.minY || value > Constants.maxY)
                 {
-                    throw new ArgumentOutOfRangeException("Coordinate Y", "Can't be negative or greater than 9!");
+                    throw new ArgumentOutOfRangeException("Coordinate Y", string.Format("Can't be less than {0} or greater than {1}!", Constants.minY, Constants.maxY));
                 }
                 this.y = value;
             }
