@@ -57,6 +57,7 @@
       <DependentUpon>Credits.cs</DependentUpon>
     </Compile>
     <Compile Include="Factories\RandomFactory.cs" />
+    <Compile Include="GameObjects\Entities\CombatManager.cs" />
     <Compile Include="GameObjects\Entities\Enemy.cs" />
     <Compile Include="GameObjects\GameObject.cs" />
     <Compile Include="GameObjects\Interfaces\IAttackable.cs" />
